@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_202212) do
-
-  create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "loan_number"
-    t.string "borrower_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["loan_number"], name: "index_accounts_on_loan_number"
-  end
+ActiveRecord::Schema.define(version: 2018_06_12_160242) do
 
   create_table "pay_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname"
