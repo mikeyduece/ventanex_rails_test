@@ -13,3 +13,8 @@ development:
   <<: *common
   adapter: mysql2
   database: code_test
+
+test:
+  <<: *common
+  adapter: mysql2
+  database: code_test_test

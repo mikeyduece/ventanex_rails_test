@@ -1,0 +1,9 @@
+one:
+  nickname: 'Test Account 1'
+  account_number: '1234567890'
+  account_type: 1
+
+two:
+  nickname: 'Test Account 2'
+  account_number: '1234567891'
+  account_type: 2
