@@ -1,0 +1,13 @@
+<div class='d-flex flex-column align-items-center mt-5'>
+  <h2>Add new payment account!</h2>
+  <%= form_with model: pay_account, class: '' do |f| %>
+
+    <%= render 'pay_accounts/partials/text_field', attribute: :nickname, f: f %>
+    <%= render 'pay_accounts/partials/text_field', attribute: :account_number, f: f %>
+
+    <div class='form-group'>
+      <%= f.select :account_type, account_types, {}, class: 'form-control-lg w-100' %>
+    </div>
+    <%= f.submit 'Create', class: 'btn btn-success w-100' %>
+  <% end %>
+</div>
