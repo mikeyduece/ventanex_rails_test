@@ -15,10 +15,11 @@ class PayAccountsController < ApplicationController
     pay_account = PayAccount.new(pay_account_params)
 
     if pay_account.save
-      redirect_to pay_accounts_path, success: "#{pay_account.nickname} successfully create!"
+      flash[:success] = "#{pay_account.nickname} successfully created!"
+      redirect_to pay_accounts_path
     else
-
-      redirect_to new_pay_accounts_path, error: pay_account.errors.full_messages.to_sentence
+      flash[:error] = pay_account.errors.full_messages.to_sentence
+      redirect_to new_pay_accounts_path
     end
 
   end
