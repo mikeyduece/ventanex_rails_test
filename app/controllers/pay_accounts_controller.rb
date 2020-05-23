@@ -12,6 +12,15 @@ class PayAccountsController < ApplicationController
   end
 
   def create
+    pay_account = PayAccount.new(pay_account_params)
+
+    if pay_account.save
+      redirect_to pay_accounts_path, success: "#{pay_account.nickname} successfully create!"
+    else
+
+      redirect_to new_pay_accounts_path, error: pay_account.errors.full_messages.to_sentence
+    end
+
   end
 
   private
