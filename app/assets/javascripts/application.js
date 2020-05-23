@@ -17,3 +17,20 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function () {
+  $('.hide-btn').click(function () {
+    let accountNumberContainer = $(this).parent().find('.acct-num')
+    let fullAccountNumber = accountNumberContainer.text().trim()
+    let length = fullAccountNumber.length
+    let lastFour = fullAccountNumber.slice(-4)
+    let hidden = pad(lastFour, length)
+
+    $(accountNumberContainer).html(hidden)
+  })
+
+  function pad(str, max) {
+    let string = str.toString()
+    return string.length < max ? pad('*' + string, max) : string
+  }
+})
