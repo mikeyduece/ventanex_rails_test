@@ -9,30 +9,32 @@
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
-            <tr>
-              <th>Nickname</th>
-              <th>Account Type</th>
-              <th>Account Number</th>
-              <th>
-                <%= link_to 'Create', new_pay_account_path, class: 'btn btn-success' %>
-              </th>
-            </tr>
+          <tr>
+            <th>Nickname</th>
+            <th>Account Type</th>
+            <th>Account Number</th>
+            <th>
+              <%= link_to 'Create', new_pay_account_path, class: 'btn btn-success' %>
+            </th>
+          </tr>
           </thead>
           <tbody>
-            <% @pay_accounts.each do |pay_account| %>
-              <tr>
-                <td><%= pay_account.nickname %></td>
-                <td><%= pay_account.account_type.humanize %></td>
-                <td>
+          <% @pay_accounts.each do |pay_account| %>
+            <tr>
+              <td><%= pay_account.nickname %></td>
+              <td><%= pay_account.account_type.humanize %></td>
+              <td class='d-flex flex-row'>
+                <div class='acct-num mr-3'>
                   <%= pay_account.account_number %>
-                  <button type="button" class="btn btn-sm btn-default">hide</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-warning">Show</button>
-                  <button type="button" class="btn btn-danger">Delete</button>
-                </td>
-              </tr>
-            <% end %>
+                </div>
+                <button type="button" class="btn btn-sm btn-secondary hide-btn">Hide</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-warning">Show</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          <% end %>
           </tbody>
         </table>
       </div>
@@ -42,16 +44,16 @@
       <div class='table-responsive'>
         <table class='table table-striped'>
           <thead>
-            <tr>
-              <td>Borrower Name</td>
-              <td>Loan Number</td>
-            </tr>
+          <tr>
+            <td>Borrower Name</td>
+            <td>Loan Number</td>
+          </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><%= @xml_account.borrower_name %></td>
-              <td><%= @xml_account.loan_number %></td>
-            </tr>
+          <tr>
+            <td><%= @xml_account.borrower_name %></td>
+            <td><%= @xml_account.loan_number %></td>
+          </tr>
           </tbody>
         </table>
       </div>
