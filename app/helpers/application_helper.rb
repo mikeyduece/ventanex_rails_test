@@ -1,6 +1,6 @@
 module ApplicationHelper
 
   def account_types
-    PayAccount.account_types.map { |a| [a[0].titleize, a[-1]] }
+    PayAccount.account_types.keys.map { |a| [a.titleize, a] }
   end
 end
