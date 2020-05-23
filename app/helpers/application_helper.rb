@@ -5,7 +5,6 @@ module ApplicationHelper
   end
 
   def flash_class(level)
-    require 'pry'; binding.pry
     case level.to_sym
     when :notice
       'alert alert-info'

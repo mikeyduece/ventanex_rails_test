@@ -1,13 +1,8 @@
 class Account
 
-  def loan_file
-    xml_file = File.read('app/assets/xml/loan.xml')
-    @loan_file ||= Nokogiri::XML(xml_file)
-  end
-
   # Searches and displays borrow name
-  def borrow_name
-    node_text('BorrowerFullNameUnformatted')
+  def borrower_name
+    node_text('BorrowerFullNameUnformated')
   end
 
   # Searches and displays loan number
@@ -16,6 +11,12 @@ class Account
   end
 
   private
+
+  # Reads and parses the loan xml file
+  def loan_file
+    xml_file = File.read('app/assets/xml/loan.xml')
+    @loan_file ||= Nokogiri::XML(xml_file)
+  end
 
   # Retrieves the inner text from the specified node
   def node_text(node)
