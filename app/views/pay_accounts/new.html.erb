@@ -1,6 +1,6 @@
 <div class='d-flex flex-column align-items-center mt-5'>
   <h2>Add new payment account!</h2>
-  <%= form_with model: pay_account, local: true, class: '' do |f| %>
+  <%= form_with model: @pay_account, local: true, class: '' do |f| %>
 
     <%= render 'pay_accounts/partials/text_field', attribute: :nickname, f: f %>
     <%= render 'pay_accounts/partials/text_field', attribute: :account_number, f: f %>

@@ -1,10 +1,9 @@
 class PayAccountsController < ApplicationController
-  helper_method :pay_account
-
-  # TODO: Add lookup to Account class
+  helper_method :account
 
   def index
     @pay_accounts = PayAccount.all
+    @xml_account = Account.new
   end
 
   def new
@@ -26,8 +25,8 @@ class PayAccountsController < ApplicationController
 
   private
 
-  def pay_account
-    @pay_account ||= PayAccount.find_by(id: pay_account_params[:id])
+  def account
+    @account ||= Account.new
   end
 
   def pay_account_params
